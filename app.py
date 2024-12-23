@@ -17,7 +17,7 @@ from foleycrafter.models.onset import torch_utils
 from foleycrafter.models.time_detector.model import VideoOnsetNet
 from foleycrafter.pipelines.auffusion_pipeline import Generator, denormalize_spectrogram
 from foleycrafter.utils.util import build_foleycrafter, read_frames_with_moviepy
-
+import pandas as pd
 
 os.environ["GRADIO_TEMP_DIR"] = "./tmp"
 
@@ -134,8 +134,10 @@ class FoleyController:
         sampler_dropdown,
         sample_step_slider,
         cfg_scale_slider,
-        seed_textbox,
+        seed_textbox,savedir_sample = None
     ):
+        if not pd.isna(savedir_sample):
+            self.savedir_sample = savedir_sample
         device = "cuda"
         # move to gpu
         self.time_detector = controller.time_detector.to(device)
