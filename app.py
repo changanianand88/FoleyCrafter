@@ -336,5 +336,5 @@ with gr.Blocks(css=css) as demo:
         server_name=args.server_name,
         server_port=args.port,
         share=args.share,
-        allowed_paths=["./assets/foleycrafter.png"],
+        allowed_paths=["./assets/foleycrafter.png","/content/drive/MyDrive/Project_Storybite/Base_Data/foley_video"],
     )
