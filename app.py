@@ -134,7 +134,7 @@ class FoleyController:
         sampler_dropdown,
         sample_step_slider,
         cfg_scale_slider,
-        seed_textbox,savedir_sample = None
+        seed_textbox,savedir_sample = "/content/drive/MyDrive/Project_Storybite/Base_Data/foley_video/sample"
     ):
         if not pd.isna(savedir_sample):
             self.savedir_sample = savedir_sample
